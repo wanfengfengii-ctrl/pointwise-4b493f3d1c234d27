@@ -94,6 +94,9 @@ async def verify():
             await byte_reference(block, window)
             cases += 1
     print('BASELINE_OK frozen=5 byte_reference=' + str(cases))
+    # Independent components, dependency direction and stand-in ports.
+    from component_checks import verify_components
+    await verify_components()
 
 if __name__ == '__main__':
     asyncio.run(verify())
